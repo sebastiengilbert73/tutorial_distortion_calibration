@@ -57,6 +57,7 @@ def main():
         cv2.circle(annotated_img, (round(undistorted_p[0]), round(undistorted_p[1])), 3, (255, 0, 0), thickness=-1)
     cv2.imshow("The undistorted feature points", annotated_img)
     cv2.waitKey()
+    cv2.imwrite(os.path.join(output_directory, "calibrateWithCheckerboard_main_annotated.png"), annotated_img)
 
     # Undistort the checkerboard image
     undistorted_checkerboard_img = radial_distortion.UndistortImage(checkerboard_img)
